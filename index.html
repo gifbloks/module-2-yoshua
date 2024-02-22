@@ -38,19 +38,23 @@
     <!-- ID -->
     <form>
       <fieldset class="identity">
-        <label for="fname">ID:</label><br />
+        <label for="fname">ID: (3-16)</label><br />
         <input
           type="text"
           id="fname"
           name="fname"
           placeholder="fullname"
+          required autofocus
+          pattern="\w{3-16}"
         /><br />
-        <label for="lname">Password:</label><br />
+        <label for="lname">Password: (4-6)</label><br />
         <input
           type="password"
           id="lname"
           name="lname"
           placeholder="password"
+          required autofocus
+          pattern="\d{4-6}"
         /><br />
         <input type="submit" value="submit" /><br />
       </fieldset>
@@ -58,51 +62,49 @@
     
     <!-- identity -->
     <main class="main">
-      <section>
+      <section class="sect">
         <div class="container">
           <!-- name and age -->
-          <div class="box">
-            <div class="box1">
+            <div id="box1">
               <form action="/action_page.php">
-              <p><strong></strong>write carefully!</p>
-              <label for="name">Fullname</label><br />
-              <input
-              type="text"
-              id="name"
-              name="fullname"
-              placeholder="fullname"/>
-              
-              <br />
-              
-              <label for="age">Age :</label><br />
-              <input type="text" id="age" name="age" placeholder="0-100" /><br />
-              <input type="date" id="date" name="date" placeholder="birthday" />
-              <input type="submit" value="submit" />
+              <p class="write"><b>write carefully!</b></p>
+                <label for="name">Fullname</label>
+                <input
+                type="text"
+                id="name"
+                name="fullname"
+                placeholder="fullname"/>
+                <label for="age">Age :</label>
+                <input type="text" id="age" name="age" placeholder="0-100" />
+                <input type="date" id="date" name="date" placeholder="birthday" />
+                <input type= "number" id="phone-number" name="phone-number" placeholder="+62xxxxxxxxxxx">
+                <input type="submit" value="submit" />
             </div>
   
-            <!-- medical-history -->
-            <div class="box2">
+          <!-- medical-history -->
+            <div id="box2">
               <form action="/action_page.php">
-                <p>do you have any medical history</p>
+                <h2>do you have any medical history</h2>
                 <input type="radio" name="yes" id="yes" value="yes"/>
                 <label for="yes">yes</label>
                 <input type="radio" name="no" id="no" value="no"/>
                 <label for="no">no</label>
               </form>
             </div>
-            <div class="box3">
-              <p>if you have what it is?(ignore if you dont have)</p>
+
+            <div id="box3">
+              <h2>if you have what it is?(ignore if you dont have)</h2>
               <input
                 type="text"
                 id="med"
                 name="medical history"
-                placeholder="hypertension, diabetes, etc"/>
+                placeholder="medical-history"/>
               <input type="submit" value="submit" />
             </div>
             
-            <!-- regio of the problem -->
-            <div class="box3">
-              <p>where is the problem in regio :</p>
+          <!-- regio of the problem -->
+            <div id="box4">
+              <h2>where is the problem in regio :</h2>
               <label for="regio">choose the regio :</label>
               <select name="regio" id="regio">
               <option value="1">1</option>
@@ -112,9 +114,9 @@
               </select>
             </div>
             
-            <!-- problem -->
-            <div class="box4">
-              <p>what is the problem:</p>
+          <!-- problem -->
+            <div id="box5">
+              <h2>what is the problem:</h2>
               <input type="checkbox" name="caries" id="caries" value="1" />
              <label for="caries">caries</label>
              <input type="checkbox" name="radiks" id="radiks" value="2" />
@@ -124,26 +126,31 @@
              <input type="submit" value="submit" />
             </div>
 
-          </div>
+          <!-- anamnesis -->
+              <div id="box6">  
+                <h2>anamnesa :</h2>
+                <textarea
+                id="anamnesa"
+                name="anamnesa"
+                rows="3"
+                cols="10"
+                placeholder="anamnesa">
+                </textarea>
+                <input type="submit" value="submit" />
+              </div>  
 
           <!-- odontogram -->
-        <figure>
-          <img class="img1"
-            src="https://infodrg.com/wp-content/uploads/2020/12/1206D6AF-6FA6-41C5-A2F5-D49B1D86622A.jpeg"
-            alt="odontogram"/>
-          <figcaption class="figcaption">Fig.1 odontogram</figcaption>
-        </figure>
-
-          <!-- anamnesis -->
-          <p>anamnesa :</p>
-          <textarea
-          id="anamnesa"
-          name="anamnesa"
-          rows="3"
-          cols="10"
-          placeholder="anamnesa">
-          </textarea>
-          <input type="submit" value="submit" /> 
+            <div id="box7">
+              <picture>
+                <source media="(max-width: 320px)" srcset="https://i.stack.imgur.com/X41rZ.jpg">
+                <source media="(min-width: 321px) and max-width: 720px" srcset="https://i.stack.imgur.com/IwwwZ.png">
+                <source media="(min-width: 721px)" srcset="https://infodrg.com/wp-content/uploads/2020/12/1206D6AF-6FA6-41C5-A2F5-D49B1D86622A.jpeg">
+                <img class="img1"
+                  src="https://infodrg.com/wp-content/uploads/2020/12/1206D6AF-6FA6-41C5-A2F5-D49B1D86622A.jpeg"
+                  alt="odontogram"/>
+                <figcaption class="figcaption">Fig.1 odontogram</figcaption>
+              </picture>
+            </div>
         </div>
       </section>
     </main>
